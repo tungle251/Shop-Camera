@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="vi" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- CSS and Jquery start here -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LẮP ĐẶT CAMERA QUAN SÁT GIÁ RẺ UY TÍN TẠI FPT VN</title>
+<meta name="description"
+	content="Công ty FPT Việt Nam cung cấp lắp đặt camera quan sát, lắp camera chống trộm cho gia đình, camera giám sát cửa hàng… lắp camera giá rẻ, uy tín toàn quốc.">
+<meta property="fb:app_id" content="" />
+<meta name="DC.title" content="Camera FPT Việt Nam" />
+<meta name="geo.region" content="VN-HN" />
+<meta name="geo.placename" content="Hà nội" />
+<meta name="geo.position" content="20.984321;105.818546" />
+<meta name="ICBM" content="20.984321, 105.818546" />
+<link rel="shortcut icon"
+	href="http://fptcamera.vn/resources/uploads/images/automatic/favicon/camera-giam-sat-fpt.png"
+	type="image/x-icon">
+
+<th:block th:replace="index/layout/link::link">
+
+
+	<!-- CSS and Jquery end here -->
+</head>
+
+<body lang="vi">
+	<div id="wrapper">
+		<h1 style="display: none;">
+			<b>Lắp đặt camera quan sát giá rẻ </b>,<b> camera FPT</b>
+
+		</h1>
+		<h2 style="display: none;">Tư vấn lắp đặt camera</h2>
+		<!-- Top start here -->
+		<div id="top">
+			<div id="fb-root"></div>
+			<script>
+				(function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id))
+						return;
+					js = d.createElement(s);
+					js.id = id;
+					js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script>
+
+			<th:block th:replace="index/layout/top_menu::top-menu"></th:block>
+
+			<!-- Login / Register Modal-->
+
+			<th:block th:replace="index/layout/login_register::login"></th:block>
+
+			<!-- Menu -->
+			<div class="container-fluid">
+				<div class="row hidden-md hidden-lg">
+					<nav class="navbar navbar-inverse navbar-fixed-top custom-navbar">
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed"
+									data-toggle="collapse"
+									data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span> <span
+										class="icon-bar"></span> <span class="icon-bar"></span> <span
+										class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand" href="http://localhost/a/CameraGiamSat">
+									<img
+									alt="Camera FPT Việt Nam tự hào Nhà cung cấp thiết bị camera giám sát giá rẻ uy tín trên toàn quốc"
+									src="http://fptcamera.vn/resources/ui_images/client/background/logo_mobile.png">
+								</a>
+								<div class="navbar-brand" id="top-hotline" style="float: right;">
+									<div class="name">
+										<a class="fa fa-user" href="#" data-toggle="modal"
+											data-target=".login-register-form"> Đăng nhập</a>
+									</div>
+								</div>
+							</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" aria-expanded="false"
+								id="bs-example-navbar-collapse-1">
+								<button type="button" class="navbar-toggle"
+									data-toggle="collapse"
+									data-target="#bs-example-navbar-collapse-1"
+									aria-expanded="true"
+									style="position: fixed; top: 40px; right: 0; border: none; padding: 3px; margin-right: 5px;">
+									<i class="fa fa-times-circle" style="font-size: 25px;"></i>
+								</button>
+								<ul class="nav navbar-nav">
+									<div class="name">
+										<a class="dropdown-toggle" href="JavaScript::void(0)"
+											id="menu1" type="button" data-toggle="dropdown">Kiểm tra
+											đơn hàng <span class="caret"></span>
+										</a>
+										<div class="dropdown-menu" role="menu" aria-labelledby="menu1"
+											style="padding: 5px">
+											<input id="code_order_search_coll" class="form-control"
+												placeholder="Nhập mã đơn hàng" type="text" name="code_order"
+												style="color: red">
+											<button type="button" class="form-control btn btn-danger"
+												id="btnKiemTraDonHang_coll">Kiểm tra</button>
+										</div>
+									</div>
+									<li><a
+										href="http://localhost/a/CameraGiamSat/category/1/1"><img
+											src="http://localhost/a/CameraGiamSat/public/images/danh-muc-san-pham/lap-dat-camera-tron-bo.png" />&nbsp;&nbsp;Camera
+											trọn bộ 1</a></li>
+									<li><a
+										href="http://localhost/a/CameraGiamSat/category/16/1"><img
+											src="http://localhost/a/CameraGiamSat/public/images/danh-muc-san-pham/camera-giam-sat.png" />&nbsp;&nbsp;Camera
+											giám sát </a></li>
+									<li><a
+										href="http://localhost/a/CameraGiamSat/category/50/1"><img
+											src="http://localhost/a/CameraGiamSat/public/images/danh-muc-san-pham/dau-ghi-hinh-camera-quan-sat.png" />&nbsp;&nbsp;Đầu
+											ghi hình camera </a></li>
+									<li><a
+										href="http://localhost/a/CameraGiamSat/category/76/1"><img
+											src="http://localhost/a/CameraGiamSat/public/images/danh-muc-san-pham/phu-kien-camera.png" />&nbsp;&nbsp;Phụ
+											kiện camera </a></li>
+									<li><a
+										href="http://localhost/a/CameraGiamSat/category/92/1"><img
+											src="http://localhost/a/CameraGiamSat/public/images/danh-muc-san-pham/camera-thiet-bi-an-ninh.png" />&nbsp;&nbsp;Thiết
+											bị an ninh </a></li>
+									<li><a
+										href="http://localhost/a/CameraGiamSat/category/98/1"><img
+											src="http://localhost/a/CameraGiamSat/public/images/danh-muc-san-pham/may-cham-cong-gia-re.png" />&nbsp;&nbsp;Máy
+											chấm công </a></li>
+									<li><a
+										href="http://localhost/a/CameraGiamSat/category/108/1"><img
+											src="http://localhost/a/CameraGiamSat/public/images/danh-muc-san-pham/78-32.png" />&nbsp;&nbsp;Tổng
+											đài - Bộ đàm </a></li>
+									<li><a
+										href="http://localhost/a/CameraGiamSat/category/112/1"><img
+											src="http://localhost/a/CameraGiamSat/public/images/danh-muc-san-pham/thiet-bi-van-phong.png" />&nbsp;&nbsp;Thiết
+											bị văn phòng </a></li>
+								</ul>
+							</div>
+							<!-- /.navbar-collapse -->
+						</div>
+						<!-- /.container-fluid -->
+					</nav>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$('#btnKiemTraDonHang_coll')
+						.click(
+								function() {
+									location.href = 'http://localhost/a/CameraGiamSat/kiem-tra-don-hang/'
+											+ $('#code_order_search_coll')
+													.val();
+								})
+			</script>
+			<!-- End Menu -->
+			<div class="clear"></div>
+		</div>
+		<!-- Top end here -->
+		<th:block>
+			<div class="container menu_bg">
+				<div class="row menu_bg">
+					<div class="col-xs-12 col-xs-offset-0 menu_bg">
+						<div class="row">
+							<div class="col-md-4 col-lg-3 hidden-xs hidden-sm"
+								style="padding-right: 0;">
+								<div id="prd-cate-list">
+									<div class="prd-cate-header">
+										<span>Danh mục sản phẩm<i
+											class="fa fa-chevron-circle-down"></i></span>
+									</div>
+									<ul class="main-page equalheightbanner" style="height: 401px;">
+										<ul>
+											<li th:each="cate : ${listCate} "
+												th:if="${cate.id_root == 0 && cate.status == 1}"><a
+												th:href="@{'/CameraGiamSat/category/'+${cate.id}}"><img
+													th:src="@{'/public/images/danh-muc-san-pham/' + ${cate.icon}}"><span
+													class="mc_title" th:text="${cate.name}"> <i
+														class="fa fa-chevron-right hidden-md"></i></span></a>
+												<ul style="display: none;">
+													<li th:each="cate1 : ${listCate}"
+														th:if="${cate1.id_root == cate.id && cate1.status == 1}"><a
+														th:href="@{'/CameraGiamSat/category/'+${cate1.id}}"><img
+															alt="Bộ đàm cầm tay" src=""><span class="mc_title"
+															th:text="${cate1.name}"><i
+																class="fa fa-chevron-right hidden-md"></i> </span></a>
+														<ul>
+															<li th:each="cate2 : ${listCate}"
+																th:if="${cate1.id == cate2.id_root && cate1.status == 1}"><a
+																th:href="@{'/CameraGiamSat/category/'+${cate2.id}}"><img
+																	th:alt="${cate2.name}" src=""><span
+																	class="mc_title" th:text="${cate2.name}"><i
+																		class="fa fa-chevron-right hidden-md"></i> </span></a>
+																<div class="clear"></div></li>
+														</ul>
+														<div class="clear"></div></li>
+												</ul>
+												<div class="clear"></div></li>
+										</ul>
+										<div class="clear"></div>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-8 col-lg-9">
+								<div class="row">
+									<div class="col-xs-12 col-lg-8" style="padding: 0;">
+										<div id="searchform">
+											<form
+												action="http://localhost/a/CameraGiamSat/search-product"
+												accept-charset="utf-8" method="get">
+												<img style="display: none;" class="loader"
+													src="http://fptcamera.vn/resources/ui_images/client/background/loader.gif" />
+												<input type="text" name="key" value="" id="searchbutton"
+													class="searchfield" onkeyup="lookup()" autocomplete="off"
+													placeholder="Tìm kiếm sản phẩm ..." /> <input
+													type="submit" name="submit_search" value="Tìm kiếm"
+													id="search_btn" class="searchbutton" />
+												<div class="clear"></div>
+												<div class="autoSuggestionsList_l" id="autoSuggestionsList">
+												</div>
+											</form>
+										</div>
+										<div id="banner" class="hidden-xs hidden-sm equalheightbanner">
+											<div class="bannerslider">
+												<ul class="slides">
+													<li><a href="#"> <img
+															title="công ty lắp đặt camera uy tín"
+															th:src="@{/public/images/slider/chung-nhan-dai-ly-camera-hikvision.jpg}" />
+															<div class="clear"></div>
+													</a></li>
+													<li><a href="#"> <img title="lắp đặt mạng FPT"
+															th:src="@{/public/images/slider/lap-dat-mang-fpt.jpg}" />
+															<div class="clear"></div>
+													</a></li>
+													<li><a href="#"> <img
+															title="lắp đặt camera trọn bộ gía rẻ"
+															th:src="@{/public/images/slider/camera-benco-gia-re.jpg}" />
+															<div class="clear"></div>
+													</a></li>
+												</ul>
+												<div class="clear"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 hidden-xs hidden-sm hidden-md"
+										style="padding-left: 0;">
+										<button type="button" class="btn btn-danger button-support"
+											data-toggle="modal" data-target="#supportonlineModal">
+											<img
+												src="http://fptcamera.vn/resources/ui_images/client/background/yahoo-smile.png">&nbsp;Hỗ
+											trợ trực tuyến
+										</button>
+										<a class="b_a" href="#"><img title="Lắp camera"
+											th:src="@{/public/images/slider/lap-mang-fpt.jpg}"></a> <a
+											class="b_a" href="#"><img
+											title="Lắp đặt camera tặng báo trộm"
+											th:src="@{/public/images/slider/doi_camera_cu_lay_moi.jpg}"></a>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div class="col-xs-12 hidden-xs hidden-sm">
+								<div id="sub-menu">
+									<div class="row">
+										<div class="col-xs-12 col-lg-7">
+											<div class="contain">
+												<a href='#'>Sơ lược công ty</a> <a href='#'>Chính sách
+													ưu đãi</a> <a href='#'>Tin camera</a> <a href='#'>Liên hệ</a>
+											</div>
+										</div>
+										<div class="col-lg-5 hidden-xs hidden-sm hidden-md">
+											<div class="newsslider">
+												<ul class="slides">
+													<li><a href="#">Lắp đặt camera giám sát khu công
+															nghiệp</a></li>
+													<li><a href="#">lắp đặt camera quan sát tại Bắc
+															Giang</a></li>
+													<div class="clear"></div>
+												</ul>
+												<div class="clear"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div class="col-xs-12">
+								<th:block th:each="slides : ${slides}"
+									th:if="${slides[2] == 0 && slides[3] == 1}">
+									<ul class="nav nav-tabs custom-tabs " role="tablist">
+										<li role="presentation" class="active"><a
+											th:href="@{'/CameraGiamSat/category/'+${slides[0]}}"
+											th:text="${slides[1]}"></a></li>
+
+										<th:block th:each="listCate : ${listCate}"
+											th:if="${slides[0] == listCate.id_root && listCate.status == 1}">
+											<li class="hidden-xs hidden-sm" role="presentation"><a
+												th:href="@{'/CameraGiamSat/category/'+${listCate.id}}"
+												th:text="${listCate.name}"></a></li>
+										</th:block>
+									</ul>
+									<div class="tab-content ">
+										<div role="tabpanel" class="tab-pane active">
+											<div class="row">
+												<div class="col-xs-12 col-lg-9">
+													<div class="row">
+														<th:block
+															th:each="products : ${productService.getProductBySlide(slides[0])}">
+															<div class="col-xs-6 col-sm-4 col-lg-3 ">
+																<div class="thumbnail products">
+																	<a
+																		th:href="@{/CameraGiamSat/productdetail/}+${products[0]}"><img
+																		alt="Lắp đặt camera giá rẻ"
+																		th:src="@{/public/images/san-pham/}+ ${products[8]}"></a>
+																	<div class="caption">
+																		<a
+																			th:href="@{/CameraGiamSat/productdetail/}+${products[0]}">
+																			<h3 th:text="${products[2]}"></h3>
+																		</a>
+																		<div class="clear"></div>
+																		<span class="new-price"
+																			th:text="${#numbers.formatDecimal(products[3], 0, 'COMMA', 0, 'POINT')} + ' VNĐ'">
+																		</span>
+																		<!-- <span class="old-price">2.500.000 đ</span> -->
+																	</div>
+																</div>
+															</div>
+														</th:block>
+													</div>
+												</div>
+												<div class="col-md-3 hidden-xs hidden-sm hidden-md">
+													<a class="b_a2"
+														href="http://localhost/a/CameraGiamSat/category/1/1"><img
+														alt="lap-camera-giam-sat-khong-day-wifi"
+														th:src="@{/public/new/lap-dat-camera-quan-sat-tron-bo-hd-gia-re1.jpg}"></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</th:block>
+							</div>
+							<div class="col-xs-12 hidden-xs hidden-sm">
+								<div class="text-header">Camera các hãng</div>
+								<div class="galleryslider">
+									<ul class="slides">
+										<li><a href="#"><img alt="Camera Vantech Giá Rẻ"
+												th:src="@{/public/new/camera-vantech.jpg}" /></a></li>
+										<li><a href="#"><img alt="Camera Benco Giá Rẻ"
+												th:src="@{/public/new/camera-hang-benco1.jpg}" /></a></li>
+										<li><a href="#"><img alt="Camera Dahua Đài Loan"
+												th:src="@{/public/new/camera-dahua.jpg}" /></a></li>
+										<li><a href="#"><img alt="Camera Questek Việt Nam"
+												th:src="@{/public/new/camera-questek.jpg}" /></a></li>
+										<li><a href="#"><img alt="Camera Vantech Giá Rẻ"
+												th:src="@{/public/new/camera-vantech.jpg}" /></a></li>
+										<li><a href="#"><img alt="Camera Benco Giá Rẻ"
+												th:src="@{/public/new/camera-hang-benco1.jpg}" /></a></li>
+										<li><a href="#"><img alt="Camera Dahua Đài Loan"
+												th:src="@{/public/new/camera-dahua.jpg}" /></a></li>
+										<li><a href="#"><img alt="Camera Questek Việt Nam"
+												th:src="@{/public/new/camera-questek.jpg}" /></a></li>
+										<li><a href="#"><img alt="Camera SAMSUNG HÀN QUỐC"
+												th:src="@{/public/new/camera-hang-samsung.jpg}" /></a></li>
+										<div class="clear"></div>
+									</ul>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<!-- <div class="col-xs-12 hidden-xs hidden-sm">
+								<div class="text-header">Chấp nhận thanh toán</div>
+								<img style="width: 100%; margin: 10px 0;"
+									alt="Chấp nhận thanh toán"
+									src="http://fptcamera.vn/resources/ui_images/client/background/payments.png">
+							</div>  -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Bottom end here -->
+			<th:block th:replace="index/layout/footer::footer"></th:block>
+			<div class="sticky-container hidden-xs hidden-md">
+				<!-- <ul class="sticky">
+                <li>
+                    <a rel="no-follow" target="_blank" href="">
+                        <p>Facebook</p>
+                        <img src="http://fptcamera.vn/resources/ui_images/client/background/social/fb.jpg" />
+                    </a>
+                </li>
+                <li>
+                    <a rel="no-follow" target="_blank" href="">
+                        <p>Google+</p>
+                        <img src="http://fptcamera.vn/resources/ui_images/client/background/social/gplus.jpg" />
+                    </a>
+                </li>
+                <li>
+                    <a rel="no-follow" target="_blank" href="">
+                        <p>Twitter</p>
+                        <img src="http://fptcamera.vn/resources/ui_images/client/background/social/tt.jpg" />
+                    </a>
+                </li>
+                <li>
+                    <a rel="no-follow" target="_blank" href="">
+                        <p>Youtube</p>
+                        <img src="http://fptcamera.vn/resources/ui_images/client/background/social/yt.jpg" />
+                    </a>
+                </li>
+            </ul> -->
+			</div>
+			<div class="sticky-buttons hidden-xs hidden-md">
+				<!-- <a data-toggle="modal" data-target="#supportonlineModal">Hỗ trợ trực tuyến</a> -->
+				<!-- <a data-toggle="modal" data-target="#hotlineModal">HOTLINE</a> -->
+			</div>
+			<!-- <div class="modal fade" id="hotlineModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">HOTLINE</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div id="modal_hotline_list">
+                                                                    <div class="col-xs-4">
+                                        <div class="hotline">
+                                            <span class="phone">Hotline 1</span>
+                                            <span class="title">024.6328.2964</span>
+                                        </div>
+                                    </div>
+                                                                    <div class="col-xs-4">
+                                        <div class="hotline">
+                                            <span class="phone">Hotline 2</span>
+                                            <span class="title">0984 489 688</span>
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+			<div class="modal fade" id="supportonlineModal" tabindex="-1"
+				role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">Hỗ trợ trực tuyến</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div id="modal_hotline_list">
+									<div class="col-xs-6 col-md-4">
+										<div class="hotline">
+											<p class="title">Mr: Xuân</p>
+											<p>Tư vấn bán hàng</p>
+											<p>Tel: 098 448 9688</p>
+											<a style="float: left" href="skype:kd_fptcamera?chat"
+												class="icons skype"><i
+												style="font-size: 25px; margin-left: 10px;"
+												class="fa fa-skype"></i></a>
+										</div>
+									</div>
+									<div class="col-xs-6 col-md-4">
+										<div class="hotline">
+											<p class="title">Mr: Thành</p>
+											<p>Tư vấn bán hàng</p>
+											<p>Tel: 0971.767.285</p>
+											<a style="float: left" href="skype:kd_fptcamera?chat"
+												class="icons skype"><i
+												style="font-size: 25px; margin-left: 10px;"
+												class="fa fa-skype"></i></a>
+										</div>
+									</div>
+									<div class="col-xs-6 col-md-4">
+										<div class="hotline">
+											<p class="title">Mr: Duy</p>
+											<p>Chi nhánh Sài Gòn</p>
+											<p>Tel: 0931.588.886</p>
+											<a style="float: left" href="skype:kd_fptcamera?chat"
+												class="icons skype"><i
+												style="font-size: 25px; margin-left: 10px;"
+												class="fa fa-skype"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="go_top" class="hidden-xs hidden-sm">
+				<i class="fa fa-arrow-circle-up"></i>
+			</div>
+			<div id="fixed-bottom" class="hidden-lg hidden-md">
+				<div id="call-xs-sm">
+					<a href="tel:0984 489 688"><i class="fa fa-phone">&nbsp;&nbsp;</i>Gọi
+						0984 489 688</a>
+				</div>
+			</div>
+			<script type="text/javascript" charset="utf-8">
+				$(window).load(function() {
+					equalheight('.thumbnail.products');
+					equalheight('.thumbnail.news');
+					equalheight('.equalheight1');
+					equalheight('.equalheightbanner');
+				});
+
+				$(window).resize(function() {
+					equalheight('.thumbnail.products');
+					equalheight('.thumbnail.news');
+					equalheight('.equalheight1');
+					equalheight('.equalheightbanner');
+				});
+
+				$('#menu ul > li').hover(
+						function() {
+							$(this).children('ul').stop(true, true).delay(200)
+									.fadeIn(300);
+						},
+						function() {
+							$(this).children('ul').stop(true, true)
+									.fadeOut(300);
+						});
+
+				$('#prd-cate-list .sub-page > ul > li').hover(
+						function() {
+							$(this).children('ul').stop(true, true).delay(200)
+									.fadeIn(300);
+						},
+						function() {
+							$(this).children('ul').stop(true, true)
+									.fadeOut(300);
+						});
+
+				$('#prd-cate-list').hover(
+						function() {
+							$(this).children('ul.sub-page').stop(true, true)
+									.delay(200).slideDown(300);
+						},
+						function() {
+							$(this).children('ul.sub-page').stop(true, true)
+									.slideUp(300);
+						});
+
+				$('ul.dropdown-menu [data-toggle=dropdown]').on('click',
+						function(event) {
+							event.preventDefault();
+							event.stopPropagation();
+							$(this).parent().siblings().removeClass('open');
+							$(this).parent().toggleClass('open');
+						});
+
+				$('.scrollfix').scrollFix({
+					fixTop : 40
+				});
+
+				if ($(window).scrollTop() != "0")
+					$("#go_top").fadeIn("slow");
+				var scrollDiv = $("#go_top");
+				$(window).scroll(function() {
+					if ($(window).scrollTop() == "0")
+						$(scrollDiv).fadeOut("slow")
+					else
+						$(scrollDiv).fadeIn("slow")
+				});
+				$("#go_top").click(function() {
+					$("html, body").animate({
+						scrollTop : $("#ScrollTo").offset().top
+					}, "slow")
+				});
+
+				$('.mobileslider').flexslider({
+					animation : "fade",
+					animationLoop : true,
+					directionNav : false,
+					controlNav : false,
+				});
+				$('.bannerslider').flexslider({
+					animation : "fade",
+					animationLoop : true,
+					directionNav : false,
+				});
+
+				$('.galleryslider').flexslider({
+					animation : "slide",
+					itemWidth : 122,
+					controlNav : false,
+				});
+
+				$('.newsslider').flexslider({
+					animation : "slide",
+					direction : "vertical",
+					controlNav : false,
+					directionNav : false,
+					slideshowSpeed : 3000,
+				});
+
+				$('#prd-cate-list .main-page > ul > li').hover(
+						function() {
+							$(this).children('ul').stop(true, true).delay(200)
+									.fadeIn(500);
+						},
+						function() {
+							$(this).children('ul').stop(true, true)
+									.fadeOut(500);
+						});
+			</script>
+			<!-- Subiz -->
+			<script type='text/javascript'>
+				window._sbzq
+						|| function(e) {
+							e._sbzq = [];
+							var t = e._sbzq;
+							t.push([ "_setAccount", 50848 ]);
+							var n = e.location.protocol == "https:" ? "https:"
+									: "http:";
+							var r = document.createElement("script");
+							r.type = "text/javascript";
+							r.async = true;
+							r.src = n
+									+ "//static.subiz.com/public/js/loader.js";
+							var i = document.getElementsByTagName("script")[0];
+							i.parentNode.insertBefore(r, i)
+						}(window);
+			</script>
+</body>
+
+</html>

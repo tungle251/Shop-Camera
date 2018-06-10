@@ -1,0 +1,206 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="chitietsanpham">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 pad-btm">
+				<div class="row">
+					<div class="col-xs-12">
+						<div id="ScrollTo2" class="article_header my-breadcrumb">
+							<ol class="breadcrumb">
+								<li><a href="{'/CameraGiamSat/index'}">Trang chủ</a></li>
+								<li><a href="#">Camera trọn bộ</a></li>
+							</ol>
+						</div>
+						<div class="clear"></div>
+						<div class="row">
+							<div class="col-xs-12 col-md-7">
+								<div class=""
+									style="width: 100%; background: #fff; border: 1px solid #ccc; padding: 10px;">
+									<a data-toggle="modal" data-target=".bs-example-modal-lg">
+										<img
+										style="cursor: pointer; display: block; margin: 0 auto; background: #fff;"
+										alt="Lắp đặt camera giá rẻ"
+										th:src="@{/public/images/san-pham/}+${product.img}">
+									</a>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-5">
+
+								<div class="prd-desc equalheight1">
+									<h1 class="header2" th:text="${product.name}"></h1>
+									<div class="clear"></div>
+									<p>
+										Mã sản phẩm: <b th:text="${product.id}"></b>
+									</p>
+									<p>
+										Thương hiệu: <a href="http://fptcamera.vn/benco-viet-nam">VANTECH</a>
+									</p>
+									<p>
+										Giá thị trường: <span class='detail-oldprice'
+											th:text="${#numbers.formatDecimal(product.price*1.1, 0, 'COMMA', 0, 'POINT')}+ ' đ'"></span>
+									</p>
+									<p>
+										Giá bán: <span class='detail-price'
+											th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')} + ' đ'">
+											đ</span>
+									</p>
+									<p>
+										Tình trạng: <span class='detail-stock'>Còn hàng</span>
+									</p>
+									<p>
+										Bảo hành: <span class='detail-stock'>24 Tháng</span>
+									</p>
+									<div class="clear"></div>
+									<div style="float: left;" class="social-likes"
+										data-url="#/lap-dat-camera-gia-re-bo-1-den-8-mat">
+										<iframe
+											src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FNongLamUniversity%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=1859647834306977"
+											width="450" height="80"
+											style="border: none; overflow: hidden" scrolling="no"
+											frameborder="0" allowTransparency="true"></iframe>
+									</div>
+									<div class="clear"></div>
+									<form th:action="@{/CameraGiamSat/addCart}" class="addcart"
+										method="post" accept-charset="utf-8">
+										<input type="hidden" name="id" th:value="${product.id}" />
+										<p>
+											Số lượng: <span class='detail-spinner'>
+												<div class="input-group bootstrap-touchspin">
+													<span class="input-group-addon bootstrap-touchspin-prefix"
+														style="display: none;"></span> <input type="number"
+														name="qty" value="1" min="1" class="cart_qty form-control"
+														style="display: block;"> <span
+														class="input-group-addon bootstrap-touchspin-postfix"
+														style="display: none;"></span>
+												</div>
+											</span>
+										</p>
+										<input type="submit" name="action" value="Mua ngay"
+											class="cart_submit" />
+									</form>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-9">
+						<div class="hidden-xs">
+							<ul class="nav nav-tabs custom-tabs2" role="tablist">
+								<li role="presentation" class="active"><a href="#chitiet"
+									aria-controls="chitiet" role="tab" data-toggle="tab">Chi
+										tiết sản phẩm</a></li>
+								<li role="presentation"><a href="#thongso"
+									aria-controls="thongso" role="tab" data-toggle="tab">Thông
+										số kỹ thuật</a></li>
+							</ul>
+							<div class="tab-content">
+								<th:block th:utext="${detaiProduct}"></th:block>
+								<th:block th:utext="${digital}"></th:block>
+
+							</div>
+
+						</div>
+						<div class="fb-comments"
+							data-href="http://localhost/a/CameraGiamSat/detail-product/2"
+							data-width="auto" data-numposts="5"></div>
+						<span class="header3">Sản phẩm liên quan</span>
+						<div class="row">
+							<div class="col-xs-6 col-sm-4">
+								<div class="thumbnail products">
+									<a href="http://localhost/a/CameraGiamSat/detail-product/986"><img
+										alt="Đầu ghi Hình 8 Kênh AHD VANTECH VP-8160AHDM"
+										th:src="@{/public/images/san-pham/dau-ghi-hinh-16-kenh-ahd-vantech-VP-16260AHDM.jpg}">
+									</a>
+									<div class="caption">
+										<a href="http://localhost/a/CameraGiamSat/detail-product/986"><h3>Đầu
+												ghi Hình 8 Kênh AHD VANTECH VP-8160AHDM</h3></a>
+										<div class="clear"></div>
+										<div class="row">
+											<div class="col-xs-12">
+												<span class="new-price">3,500,000 đ</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-4">
+								<div class="thumbnail products">
+									<a href="http://localhost/a/CameraGiamSat/detail-product/454"><img
+										alt="Camera kbvision KH-4C2001 Full HD 2.0M"
+										th:src="@{/public/images/san-pham/camera-kbvision-KH-4C2001.jpg}">
+									</a>
+									<div class="caption">
+										<a href="http://localhost/a/CameraGiamSat/detail-product/454"><h3>Camera
+												kbvision KH-4C2001 Full HD 2.0M</h3></a>
+										<div class="clear"></div>
+										<div class="row">
+											<div class="col-xs-12">
+												<span class="new-price">1,030,000 đ</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-4">
+								<div class="thumbnail products">
+									<a href="http://localhost/a/CameraGiamSat/detail-product/355"><img
+										alt="Camera Samsung SCV-6083RAP chất lượng cao"
+										th:src="@{/public/images/san-pham/lap-dat-camera-samsung-SCV-6083RAP.jpg}">
+									</a>
+									<div class="caption">
+										<a href="http://localhost/a/CameraGiamSat/detail-product/355"><h3>Camera
+												Samsung SCV-6083RAP chất lượng cao</h3></a>
+										<div class="clear"></div>
+										<div class="row">
+											<div class="col-xs-12">
+												<span class="new-price">3,300,000 đ</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-3">
+						<span class="header3">Sản phẩm cùng danh mục</span>
+						<div class="media products">
+							<div class="media-left">
+								<a href="http://localhost/a/CameraGiamSat/detail-product/1">
+									<img class="media-object" alt="Lắp Đặt Trọn Bộ 1 Camera Giá Rẻ"
+									th:src="@{/public/images/san-pham/lap-dat-tron-bo-1-camera-gia-re.jpg}">
+								</a>
+							</div>
+							<div class="media-body">
+								<a href="http://localhost/a/CameraGiamSat/detail-product/1">
+									<h4 class="media-heading">Lắp Đặt Trọn Bộ 1 Camera Giá Rẻ</h4>
+								</a> <span class="media-price">2,199,000 đ</span>
+							</div>
+						</div>
+						<div class="media products">
+							<div class="media-left">
+								<a href="http://localhost/a/CameraGiamSat/detail-product/2">
+									<img class="media-object" alt="Lắp đặt camera giá rẻ"
+									th:src="@{/public/images/san-pham/lap-dat-camera-gia-re-ha-noi.jpg}">
+								</a>
+							</div>
+							<div class="media-body">
+								<a href="http://localhost/a/CameraGiamSat/detail-product/2">
+									<h4 class="media-heading">Lắp đặt camera giá rẻ</h4>
+								</a> <span class="media-price">2,199,000 đ</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<style type="text/css">
+.media-body {
+	width: auto;
+}
+
+.prd-desc .cart_qty {
+	width: 100px;
+}
+</style>
+</th:block>

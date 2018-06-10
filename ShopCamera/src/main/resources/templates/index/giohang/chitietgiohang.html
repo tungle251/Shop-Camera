@@ -1,0 +1,148 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="giohang">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="row hidden-xs hidden-sm">
+					<div class="col-xs-12">
+						<div class="header">
+							<span>Giỏ hàng</span>
+						</div>
+						<form
+							action="http://localhost/a/CameraGiamSat/gio-hang/updateCart"
+							method="post" accept-charset="utf-8">
+							<table id="cart">
+								<tbody>
+									<tr>
+										<th></th>
+										<th>Mã - Tên sản phẩm</th>
+										<th>Hình ảnh</th>
+										<th>Giá sản phẩm</th>
+										<th>Số lượng</th>
+										<th>Thành tiền</th>
+									</tr>
+									<th:block th:each="element : ${map}">
+										<tr>
+											<td><a title="Xóa sản phẩm"
+												style="font-size: 20px; color: #000;"
+												href="http://localhost/a/CameraGiamSat/gio-hang/removeCart/af0cab178fb84ef224b8e18db1b2c311"><i
+													class="fa fa-trash"></i></a></td>
+											<td><b th:text="${element.value.product.name}"></b></td>
+											<td><img class="cart_img"
+												th:src="@{'/public/images/san-pham/' + ${element.value.product.img}}">
+											</td>
+											<td th:text="${element.value.product.price} + VNĐ"></td>
+											<td style="width: 92px;"><input
+												class="cart_qty form-control" min="1" type="number"
+												name="af0cab178fb84ef224b8e18db1b2c311"
+												th:value="${element.value.quantity} "></td>
+											<td
+												th:text="${element.value.product.price*element.value.quantity} + VNĐ"></td>
+										</tr>
+									</th:block>
+									<tr>
+										<input type="hidden" name="_token"
+											value="umdMx0FOfruGDY4ExHwuDUm3SLmqi12zUHZ4Icyg">
+										<td colspan="5">Tổng cộng</td>
+										<td style="color: #ff0000; font-weight: bold;"
+											th:text="${total} + VNĐ"></td>
+									</tr>
+									<tr class="no-border">
+										<td colspan="6"><input class="btn1" type="button"
+											value="Xóa giỏ hàng" onclick="clear_cart()"> <input
+											style="margin-left: 5px;" class="btn1" type="button"
+											value="Tiếp tục mua hàng"
+											onclick="location.href='http://localhost/a/CameraGiamSat'">
+											<input style="float: right; margin-left: 5px" class="btn2"
+											type="button" value="Thanh toán"
+											onclick="location.href='http://localhost/a/CameraGiamSat/gio-hang/thanh-toan'">
+											<input style="float: right; margin: 5px" class="btn3"
+											type="submit" value="Cập nhật số lượng"></td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="row hidden-lg hidden-md">
+					<div class="col-xs-12">
+						<div class="header">
+							<span>Giỏ hàng</span>
+						</div>
+						<form
+							action="http://localhost/a/CameraGiamSat/gio-hang/updateCart"
+							method="post" accept-charset="utf-8">
+							<table id="cart">
+								<tbody>
+									<tr>
+										<td colspan="2"><b>Lắp đặt camera giá rẻ</b></td>
+									</tr>
+									<tr>
+										<td colspan="2"><img class="cart_img"
+											src="http://localhost/a/CameraGiamSat/public/images/san-pham/lap-dat-camera-gia-re-ha-noi.jpg">
+										</td>
+									</tr>
+									<tr>
+										<td>2,199,000 VNĐ</td>
+										<td style="width: 92px;"><input
+											class="cart_qty form-control" type="number" maxlength="3"
+											size="1" name="329ac6f86b8962bcbe882eae06976f58" value="1">
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" class="text_last">2,199,000 VNĐ</td>
+									</tr>
+									<tr>
+										<td colspan="2"><b>Đầu Ghi HD-CVI 4 Kênh DAHUA
+												HCVR4104C-V2</b></td>
+									</tr>
+									<tr>
+										<td colspan="2"><img class="cart_img"
+											src="http://localhost/a/CameraGiamSat/public/images/san-pham/dau-ghi-hinh-hdcvi-dahua-HCVR4104C-V2.jpg">
+										</td>
+									</tr>
+									<tr>
+										<td>1,650,000 VNĐ</td>
+										<td style="width: 92px;"><input
+											class="cart_qty form-control" type="number" maxlength="3"
+											size="1" name="af0cab178fb84ef224b8e18db1b2c311" value="1">
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" class="text_last">1,650,000 VNĐ</td>
+									</tr>
+
+									<input type="hidden" name="_token"
+										value="umdMx0FOfruGDY4ExHwuDUm3SLmqi12zUHZ4Icyg">
+
+									<tr>
+										<td colspan="2">Tổng cộng</td>
+									</tr>
+									<tr>
+										<td colspan="2" style="color: #ff0000; font-weight: bold;">3,849,000
+											VNĐ</td>
+									</tr>
+									<tr class="no-border">
+										<td colspan="2"><input class="btn1" type="button"
+											value="Xóa giỏ hàng" onclick="clear_cart()"> <input
+											class="btn1" type="button" value="Tiếp tục mua hàng"
+											onclick="location.href='http://localhost/a/CameraGiamSat'">
+											<input class="btn3" type="submit" value="Cập nhật số lượng">
+											<input class="btn2" type="button" value="Thanh toán"
+											onclick="location.href='http://localhost/a/CameraGiamSat/gio-hang/thanh-toan'">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</th:block>

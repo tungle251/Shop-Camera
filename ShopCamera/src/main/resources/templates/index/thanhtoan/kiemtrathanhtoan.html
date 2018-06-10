@@ -1,0 +1,374 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="kiemtrathanhtoan">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="header">
+					<span>Kiểm tra thông tin nhận hàng</span>
+				</div>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr class="hidden-xs hidden-sm">
+							<td width="45%" valign="top"><br>
+								<form method="post" th:action="@{/CameraGiamSat/loginIndex}"
+									name="fLogin" id="fLogin">
+
+									<div class="shopping_title">
+										<span>Đăng nhập thành viên</span>
+									</div>
+									<div class="alert alert-danger print-error-flog"
+										style="display: none">
+										<ul></ul>
+									</div>
+									<table width="100%" border="0" cellspacing="2" cellpadding="2"
+										class="tbl_from">
+										<tbody>
+											<tr>
+												<td width="100px" class="td1">Email</td>
+												<td><input type="email" size="25" class="textfiled"
+													name="email" style="width: 100%"></td>
+											</tr>
+											<tr>
+												<td width="100px" class="td1">Mật khẩu</td>
+												<td><input type="password" size="25" class="textfiled"
+													name="password" style="width: 100%"></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td><input type="checkbox" name="ch_remember"
+													id="ch_remember" value="1" checked="checked">&nbsp;
+													<span class="font_err">Ghi nhớ đăng nhập</span> | <a
+													href="http://localhost/a/CameraGiamSat/password/reset"><b>Bạn
+															quên mật khẩu ?</b></a></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td><button id="btnLogin"
+														class="btn btn-warning btnSubmit" name="btnLogin"
+														type="submit" value="Đăng nhập">
+														<span>Đăng nhập</span>
+													</button> <input type="hidden" name="do_login" value="1">
+													&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+								</form>
+
+								<div id="wait"
+									style="display: none; width: 69px; height: 89px; position: absolute; top: 20%; left: 50%; padding: 2px; z-index: 99999">
+									<img src="" width="64" height="64"><br>Loading..
+								</div>
+								<style type="text/css">
+#wait.fixed {
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 9%;
+	background-color: pink;
+	text-align: center
+}
+</style></td>
+							<td valign="top" style="padding-left: 20px;"><br>
+								<div class="shopping_title">
+									<span>Khách hàng mới</span>
+								</div> <!-- onsubmit="return checkform(this)" -->
+								<form method="post" th:action="@{/CameraGiamSat/saveuser}"
+									name="f_shopping" th:object="${users}">
+									<div style="padding-bottom: 8px;">Hãy nhập thông tin của
+										bạn cho việc xác nhận hóa đơn và giao hàng</div>
+									<table width="100%" cellspacing="0" cellpadding="2" border="0"
+										class="tbl_from">
+										<tbody>
+											<tr>
+												<td width="150" class="td1">Họ tên (<span
+													class="font_err">*</span>)
+												</td>
+												<td><input type="hidden" th:field="*{id}" /> <input
+													type="text" th:field="*{name}" style="width: 98%;"
+													id="d_name" class="textfiled" name="name" value="">
+													<em style="color: red" th:if="${#fields.hasErrors('name')}"
+													th:errors="*{name}"></em></td>
+
+											</tr>
+											<tr>
+												<td class="td1">Địa chỉ (Số nhà, đường) (<span
+													class="font_err">*</span>)
+												</td>
+												<td class="td2"><input type="text"
+													th:field="*{address}" style="width: 98%;" class="textfiled"
+													name="address" value=""><em style="color: red"
+													th:if="${#fields.hasErrors('address')}"
+													th:errors="*{address}"></em></td>
+											</tr>
+											<tr>
+												<td class="td1">E-mail (<span class="font_err">*</span>)
+												</td>
+												<td class="td2"><input type="email" th:field="*{email}"
+													style="width: 98%;" id="d_name" class="textfiled"
+													name="email" value=""> <em style="color: red"
+													th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></em>
+												</td>
+											</tr>
+											<tr>
+												<td class="td1">Mật khẩu (<span class="font_err">*</span>)
+												</td>
+												<td class="td2"><input type="text"
+													th:field="*{password}" style="width: 98%;" id="d_name"
+													class="textfiled" name="password" value=""> <em
+													style="color: red" th:if="${#fields.hasErrors('password')}"
+													th:errors="*{password}"></em></td>
+											</tr>
+											<tr>
+												<td class="td1">Điện thoại (<span class="font_err">*</span>)
+												</td>
+												<td class="td2"><input type="text"
+													th:field="*{phone_number}" style="width: 98%;"
+													class="textfiled" name="phone" value=""> <em
+													style="color: red"
+													th:if="${#fields.hasErrors('phone_number')}"
+													th:errors="*{phone_number}"></em></td>
+											</tr>
+
+										</tbody>
+									</table>
+									<br>
+									<div class="extButton" align="right">
+										<button id="btnConfirm" class="btn btn-warning btnSubmit"
+											name="btnConfirm" type="submit" value="Tiếp tục mua hàng">
+											<span>Tiếp tục mua hàng</span>
+										</button>
+										<input type="hidden" id="" name="btnConfirm" value="1">
+									</div>
+
+								</form></td>
+						</tr>
+						<tr class="hidden-md hidden-lg">
+							<td><br>
+								<form method="post" action="" name="fLogin" id="fLogin"
+									onsubmit="return checkLog(this)">
+									<input type="hidden" name="_token"
+										value="xdbIt8XrCYjB1JDwA8gOVNYwTtLWXK6rP6vEk8RI">
+
+									<div class="shopping_title">
+										<span>Đăng nhập thành viên</span>
+									</div>
+									<div class="alert alert-danger print-error-flog"
+										style="display: none">
+										<ul></ul>
+									</div>
+									<table width="100%" border="0" cellspacing="2" cellpadding="2"
+										class="tbl_from">
+										<tbody>
+											<tr>
+												<td width="100px" class="td1">Email</td>
+												<td><input type="text" size="25" class="textfiled"
+													name="email" style="width: 100%"
+													onfocus="if(this.value=='') this.value='';"
+													onblur="if(this.value=='') this.value='';" value=""></td>
+											</tr>
+											<tr>
+												<td width="100px" class="td1">Mật khẩu</td>
+												<td><input type="password" size="25" class="textfiled"
+													name="password" style="width: 100%"></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td><input type="checkbox" name="ch_remember"
+													id="ch_remember" value="1" checked="checked">&nbsp;
+													<span class="font_err">Ghi nhớ đăng nhập</span> | <a
+													href="http://localhost/a/CameraGiamSat/password/reset"><b>Bạn
+															quên mật khẩu ?</b></a></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td><button id="btnLogin"
+														class="btn btn-warning btnSubmit" name="btnLogin"
+														type="submit" value="Đăng nhập">
+														<span>Đăng nhập</span>
+													</button> <input type="hidden" name="do_login" value="1">
+													&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+								</form> <br>
+								<div class="shopping_title">
+									<span>Khách hàng mới</span>
+								</div> <!-- onsubmit="return checkform(this)" -->
+								<form method="post" action="" name="f_shopping"
+									onsubmit="return checkform(this)">
+									<input type="hidden" name="_token"
+										value="xdbIt8XrCYjB1JDwA8gOVNYwTtLWXK6rP6vEk8RI">
+									<div style="padding-bottom: 8px;">Hãy nhập thông tin của
+										bạn cho việc xác nhận hóa đơn và giao hàng</div>
+									<table width="100%" cellspacing="0" cellpadding="2" border="0"
+										class="tbl_from">
+
+										<tbody>
+											<tr>
+												<td width="150" class="td1">Họ tên (<span
+													class="font_err">*</span>)
+												</td>
+												<td><input type="text" style="width: 98%;" id="d_name"
+													class="textfiled" name="name" value=""></td>
+											</tr>
+
+
+											<tr>
+												<td class="td1">Địa chỉ (Số nhà, đường) (<span
+													class="font_err">*</span>)
+												</td>
+												<td class="td2"><input type="text" style="width: 98%;"
+													class="textfiled" name="address" value=""></td>
+											</tr>
+
+											<!--<tr>
+        <td  class="td1" >Quốc gia</td>
+        <td  class="td2">  </td>
+    </tr>-->
+											<tr>
+												<td class="td1">Thành phố</td>
+												<td class="td2"><select name="city" id="city"
+													class="select"
+													style="width: style=&amp;amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; amp; quot; width: 99%;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot; px;"
+													d_city="">
+														<option value="" selected="">Chọn --</option>
+														<option value="Hà nội">Hà nội</option>
+														<option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+														<option value="Hòa Bình">Hòa Bình</option>
+														<option value="Hà Giang">Hà Giang</option>
+														<option value="Lào Cai">Lào Cai</option>
+														<option value="Sơn La">Sơn La</option>
+														<option value="Điện Biên">Điện Biên</option>
+														<option value="Lạng Sơn">Lạng Sơn</option>
+														<option value="Cao Bằng">Cao Bằng</option>
+														<option value="Tuyên Quang">Tuyên Quang</option>
+														<option value="Yên Bái">Yên Bái</option>
+														<option value="Ninh Bình">Ninh Bình</option>
+														<option value="TP. Hải Phòng">TP. Hải Phòng</option>
+														<option value="Quảng Ninh">Quảng Ninh</option>
+														<option value="Hà Tây">Hà Tây</option>
+														<option value="Thái Bình">Thái Bình</option>
+														<option value="Thanh Hóa">Thanh Hóa</option>
+														<option value="Nghệ An">Nghệ An</option>
+														<option value="Hà Tĩnh">Hà Tĩnh</option>
+														<option value="Đắc Lắc">Đắc Lắc</option>
+														<option value="Quảng Bình">Quảng Bình</option>
+														<option value="Quảng Trị">Quảng Trị</option>
+														<option value="TP. Huế">TP. Huế</option>
+														<option value="Quảng Ngãi">Quảng Ngãi</option>
+														<option value="Bình Định">Bình Định</option>
+														<option value="Phú Yên">Phú Yên</option>
+														<option value="Khánh Hòa">Khánh Hòa</option>
+														<option value="Gia Lai">Gia Lai</option>
+														<option value="Đồng Nai">Đồng Nai</option>
+														<option value="Bình Thuận">Bình Thuận</option>
+														<option value="Lâm Đồng">Lâm Đồng</option>
+														<option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng
+															Tàu</option>
+														<option value="Tây Ninh">Tây Ninh</option>
+														<option value="Đồng Tháp">Đồng Tháp</option>
+														<option value="Ninh Thuận">Ninh Thuận</option>
+														<option value="Vĩnh Long">Vĩnh Long</option>
+														<option value="TP. Cần Thơ">TP. Cần Thơ</option>
+														<option value="Long An">Long An</option>
+														<option value="Tiền Giang">Tiền Giang</option>
+														<option value="Trà Vinh">Trà Vinh</option>
+														<option value="Bến Tre">Bến Tre</option>
+														<option value="An Giang">An Giang</option>
+														<option value="Kiên Giang">Kiên Giang</option>
+														<option value="Lai Châu">Lai Châu</option>
+														<option value="Sóc Trăng">Sóc Trăng</option>
+														<option value="Đắc Nông">Đắc Nông</option>
+														<option value="Phú Thọ">Phú Thọ</option>
+														<option value="Vĩnh Phúc">Vĩnh Phúc</option>
+														<option value="Bắc Giang">Bắc Giang</option>
+														<option value="Thái Nguyên">Thái Nguyên</option>
+														<option value="Bắc Cạn">Bắc Cạn</option>
+														<option value="Hải Dương">Hải Dương</option>
+														<option value="Hưng Yên">Hưng Yên</option>
+														<option value="Nam Định">Nam Định</option>
+														<option value="Hà Nam">Hà Nam</option>
+														<option value="Quảng Nam">Quảng Nam</option>
+														<option value="TP. Đà nẵng">TP. Đà nẵng</option>
+														<option value="Bình Dương">Bình Dương</option>
+														<option value="Bình Phước">Bình Phước</option>
+														<option value="Cà Mau">Cà Mau</option>
+														<option value="Bạc Liêu">Bạc Liêu</option>
+														<option value="Bắc Ninh">Bắc Ninh</option>
+														<option value="New York">New York</option>
+												</select></td>
+											</tr>
+											<tr>
+												<td class="td1">E-mail (<span class="font_err">*</span>)
+												</td>
+												<td class="td2"><input type="text" style="width: 98%;"
+													class="textfiled" name="email" value=""></td>
+											</tr>
+											<tr>
+												<td class="td1">Điện thoại (<span class="font_err">*</span>)
+												</td>
+												<td class="td2"><input type="text" style="width: 98%;"
+													class="textfiled" name="phone" value=""></td>
+											</tr>
+
+										</tbody>
+									</table>
+									<br>
+									<div class="extButton" align="right">
+										<button id="btnConfirm" class="btn btn-warning btnSubmit"
+											name="btnConfirm" type="submit" value="Tiếp tục mua hàng">
+											<span>Tiếp tục mua hàng</span>
+										</button>
+										<input type="hidden" id="" name="btnConfirm" value="1">
+									</div>
+
+								</form></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+	<script>
+		function printErrorMsg(msg, object) {
+			alert("Có gì đó sai sai, xin thử lại!");
+			object.find("ul").html('');
+			object.css('display', 'block');
+
+			object.find("ul").append('<li>' + msg + '</li>');
+
+		}
+
+		$(function() {
+
+			$('#fLogin').on(
+					'submit',
+					function(e) {
+
+						e.preventDefault();
+
+						$.ajax({
+							type : 'post',
+							url : '/CameraGiamSat/loginIndex',
+							data : $('#fLogin').serialize(),
+							success : function(data) {
+								if (data.status == "success") {
+									alert("Đăng nhập thành công!");
+									//location.reload();
+									location.href = "/CameraGiamSat/thanhtoan";
+								} else {
+
+									printErrorMsg(data.messeges,
+											$(".print-error-flog"));
+								}
+
+							}
+						});
+
+					});
+
+		});
+	</script>
+</th:block>

@@ -1,0 +1,88 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="danhmucsanpham">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 pad-btm">
+				<div class="row">
+					<div class="col-md-3 hidden-xs hidden-sm">
+						<div class="header">
+							<span th:text="${cate.name}"></span>
+						</div>
+						<div class="body">
+
+							<a class="sort_list"
+								href="http://localhost/a/CameraGiamSat/category/2/1">Trọn bộ
+								camera giá rẻ 1</a> <a class="sort_list"
+								href="http://localhost/a/CameraGiamSat/category/7/1">Trọn bộ
+								camera HD</a> <a class="sort_list"
+								href="http://localhost/a/CameraGiamSat/category/12/1">Camera
+								Nhập khẩu</a>
+
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-9">
+						<!-- <div class="article_header my-breadcrumb"><ol class="breadcrumb"><li><a href="http://fptcamera.vn/">Trang chủ</a></li><li><a href="http://fptcamera.vn/thiet-bi-van-phong">Thiết bị văn phòng</a></li></ol></div> -->
+						<div class="clear"></div>
+						<div class="header4">
+							<h1 th:text="${cate.name}"></h1>
+							<h2 style="display: none;">Camera trọn bộ 1</h2>
+							<div class="clear"></div>
+							<select style="float: right; margin-top: 3px;"
+								onchange="this.options[this.selectedIndex].value &amp;&amp; (window.location = this.options[this.selectedIndex].value);">
+								<option value="http://fptcamera.vn/thiet-bi-van-phong">Sắp
+									xếp theo</option>
+								<option value="http://fptcamera.vn/thiet-bi-van-phong/?o=p-asc">Giá
+									tăng dần</option>
+								<option value="http://fptcamera.vn/thiet-bi-van-phong/?o=p-desc">Giá
+									giảm dần</option>
+							</select>
+						</div>
+						<div class="description2"></div>
+						<div class="clear"></div>
+						<div class="product_list">
+							<div class="row">
+
+
+								<th:block th:each="list: ${list}">
+									<div class="col-xs-6 col-sm-4 col-lg-3">
+										<div class="thumbnail products" style="height: 217px;">
+											<a th:href="@{/CameraGiamSat/productdetail/}+${list.id}">
+												<img alt="may-chieu-sony-VPL-DX-122"
+												th:src="@{/public/images/san-pham/}+${list.img}">
+											</a>
+											<div class="caption">
+												<a th:href="@{/CameraGiamSat/productdetail/}+${list.id}">
+													<h3 th:text="${list.name}"></h3>
+												</a>
+												<div class="clear"></div>
+												<span class="new-price"
+													th:text="${#numbers.formatDecimal(list.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></span>
+											</div>
+										</div>
+									</div>
+
+								</th:block>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="pagination">
+							<ul class="pagination">
+								<li class="disabled"></li>
+								<th:block
+									th:each="i: ${#numbers.sequence(1, __${pageNumber}__)}">
+									<li th:classappend="${page == i} ? active : '' "><a
+										th:href="@{'/CameraGiamSat/category/'+${cate.id}(page=${i})}"
+										th:text="${i}"> <span class="sr-only"></span>
+									</a></li>
+								</th:block>
+								<li><a href="#">Last ›</a></li>
+							</ul>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</th:block>
